@@ -30,10 +30,22 @@ import numpy as np
 # print(df)
 # print(df.at[0, 1])
 
-df = pd.DataFrame({"col1": [1, 3], "col2": [2, 4]})
+# df = pd.DataFrame({"col1": [1, 3], "col2": [2, 4]})
 # print(df)
 
-print(df["col1"], "\n")
-print("取出来之后的 type：", type(df["col1"]))
+# print(df["col1"], "\n")
+# print("取出来之后的 type：", type(df["col1"]))
 
+# df = pd.DataFrame({"col1": pd.Series([1, 3]), "col2": pd.Series([2, 4])})
+# print(df)
 
+s = pd.Series([1.0, 2.0, 3.0], index=["a", "b", "c"])
+df = pd.DataFrame({"col1": [1, 3], "col2": [2, 4]}, index=["a", "b"])
+# print(s, "\n")
+# print(df)
+
+print(df.index, "\n")
+print(df.columns)
+
+n = df.to_numpy()
+print(n)
