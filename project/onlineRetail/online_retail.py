@@ -1,7 +1,7 @@
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
-import common as com
+import project.common as com
 
 # encoding = com.check_encoding('data/OnlineRetail.csv')
 retails = pd.read_csv('data/OnlineRetail.csv', encoding="latin1")
@@ -67,7 +67,7 @@ new_retails["TotalPrice"] = new_retails["Quantity"] * new_retails["UnitPrice"]
 new_retails = new_retails[(new_retails["TotalPrice"] < 10_000) & (new_retails["TotalPrice"] > 0.01)]
 
 # 检查异常商品描述
-#print(new_retails["Description"].value_counts().head(10))
+# print(new_retails["Description"].value_counts().head(10))
 
 new_retails["Description"] = new_retails["Description"].str.strip().str.lower()
 
